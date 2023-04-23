@@ -1,9 +1,9 @@
 import React from "react";
-
+import Navbar from "../../components/Navbar/Navbar";
 const page = () => {
   return (
     <div>
-      <h2 className="bg-red-500">fsdfsdf</h2>
+      <Navbar />
     </div>
   );
 };
