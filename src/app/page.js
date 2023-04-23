@@ -30,22 +30,21 @@ const page = () => {
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 w-50 mx-auto justify-center gap-4  py-4 px-8 md:px-14 lg:px-24  cursor-pointer 	">
-        <div class=" border-primary border-2 bg-gray-200 shadow-md p-4 rounded-xl hover:border-blue-500">
-          Our vision is a worldwide alumni network that fosters lifelong
-          connections and engagement with the college, empowering alumni to make
-          a positive impact in their lives and the community.
-        </div>
-        <div class="  bg-gray-300 p-4 rounded-xl">
-          We aim to foster a spirit of lifelong learning and professional
-          development, and to support the college's mission of promoting
-          academic excellence, diversity, and social responsibility.
-        </div>
-        <div class="  bg-gray-400 p-4 rounded-xl">
-          Our objectives are to increase alumni engagement through diverse
-          programs and events, provide networking resources for career growth,
-          and support the college's strategic initiatives through fundraising
-          and advocacy.
-        </div>
+        <Purpose
+          text="Our vision is a worldwide alumni network that fosters lifelong connections and engagement with the college, empowering alumni to make a positive impact in their lives and the community."
+          icon="./assests/icons/vision.png"
+        />
+        <Purpose
+          text=" We aim to foster a spirit of lifelong learning and professional development, and to support the college's mission of promoting academic excellence, diversity, and social responsibility."
+          icon="./assests/icons/mission.png"
+        />
+        <Purpose
+          text=" Our objectives are to increase alumni engagement through diverse
+            programs and events, provide networking resources for career growth,
+            and support the college's strategic initiatives through fundraising
+            and advocacy."
+          icon="./assests/icons/objectives.png"
+        />
       </div>
     </div>
   );
@@ -60,5 +59,16 @@ export const NavbarItem = ({ title, link }) => {
     >
       {title}
     </li>
+  );
+};
+
+const Purpose = ({ text, icon }) => {
+  return (
+    <div className="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
+      <div className="text-center mb-2">
+        <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
+      </div>
+      {text}
+    </div>
   );
 };
