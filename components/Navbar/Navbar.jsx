@@ -1,39 +1,32 @@
 import React from "react";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
-    <header>
+    <div>
       <img src="./assests/logo.png" alt="SKIT logo" />
 
       <nav className="flex items-center justify-between bg-primary py-2">
-        <div className="flex items-center flex-1 justify-between text-white">
-          <a href="#" className="mx-4">
-            Home
-          </a>
-          <a href="#" className="mx-4">
-            Alumini Directory
-          </a>
-          <a href="#" className="mx-4">
-            Activities
-          </a>
-          <a href="#" className="mx-4">
-            About Us
-          </a>
-          <a href="#" className="mx-4">
-            Login
-          </a>
-        </div>
+        <ul className="flex items-center flex-1 justify-between text-white">
+          <NavbarItem link={"/"} title={"Home"} />
+          <NavbarItem link="/alumni-directory" title={"Alumni Directory"} />
+          <NavbarItem link="/activities" title={"Activities"} />
+          <NavbarItem link="/aboutus" title={"About us"} />
+          <NavbarItem link="/login" title={"Login"} />
+        </ul>
       </nav>
-    </header>
+    </div>
   );
 };
 
 export default Navbar;
 
-const NavbarItem = (props) => {
+export const NavbarItem = ({ title, link }) => {
   return (
-    <a href="#" className="mx-4">
-      Registeration
-    </a>
+    <li
+      href={link}
+      className=" cursor-pointer mx-4 py-3 px-4 rounded-md hover:bg-green-400  hover:text-customGray-dark"
+    >
+      {title}
+    </li>
   );
 };
